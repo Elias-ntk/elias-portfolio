@@ -1,4 +1,4 @@
-export const Projects = ({profile}) => {
+export const Projects = ({profile, onSelect}) => {
     const projectData = [
         {
             id: 1,
@@ -49,7 +49,8 @@ export const Projects = ({profile}) => {
                 {filteredProjects.map((project) => (
                 <div 
                     key={project.id}
-                    className="group bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-accent/50 transition-all shadow-xl"
+                    onClick={() => onSelect(project)}
+                    className="group cursor-pointer hover:-translate-y-1 hover:bg-white/10 bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-accent/50 transition-all shadow-xl"
                 >
                     <div className="h-48 bg-white/10 rounded-xl mb-6 overflow-hidden">
                     {/* Aquí irá una imagen de Photoshop/Canva después */}

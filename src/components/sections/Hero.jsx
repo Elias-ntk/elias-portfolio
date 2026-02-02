@@ -44,7 +44,7 @@ export const Hero = ({profile, setProfile}) => {
                         <button
                             key={opt.id}
                             onClick={() => setProfile(opt.id)}
-                            className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition-all text-left hover:-translate-y-2"
+                            className="group relative p-8 cursor-pointer rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition-all text-left hover:-translate-y-2"
                         >
                             <div className={`w-12 h-12 rounded-lg ${opt.color} mb-6 shadow-lg shadow-black/50`}></div>
                             <h3 className="text-xl font-bold mb-2 uppercase">{opt.label}</h3>

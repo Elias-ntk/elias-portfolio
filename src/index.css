@@ -1,6 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-    --color-darkBg: #050208;
-    --color-accent: #8d35ff;
+  --color-darkBg: #050208;
+  --color-accent: #8d35ff;
+  
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    @apply bg-darkBg text-white;
+  }
 }

@@ -7,9 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        darkBg: '#050208',   // Un negro más profundo y puro
-        accent: '#8d35ff',   // Tu violeta eléctrico
-        secondary: '#ff0055', // El rosa brilloso
+        darkBg: '#050208',
+        accent: '#8d35ff',
+        secondary: '#ff0055',
+      },
+      
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
       },
     },
   },

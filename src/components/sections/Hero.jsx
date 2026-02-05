@@ -2,8 +2,13 @@
 export const Hero = ({profile, setProfile}) => {
     const content = {
         all: {
-            title: "Soluciones Tech con Mentalidad de Growth",
-            subtitle: "Construyo aplicaciones que funcionan y estrategias que convierten. Elige la faceta que quieres explorar:",
+            title: "Construyo aplicaciones que funcionan y estrategias que convierten",
+            subtitle: {
+                start: "Soluciones ",
+                highlight1: "Tech ",
+                middle: "con Mentalidad de ",
+                highlight2: "Growth"
+            }
         },
         dev: {
         title: "Construyo software escalable",
@@ -29,12 +34,21 @@ export const Hero = ({profile, setProfile}) => {
     const active = content[profile];
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-20">
-            <h1 className="text-5xl md:text-7xl font-black tracking-tighter max-w-4xl mb-6">
+        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
+            <h1 className="font-black md:text-6xl tracking-tighter  max-w-4xl mb-4 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
                 {active.title}
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mb-12">
-                {active.subtitle}
+            <p className="text-4xl md:text-4xl font-bold tracking-tighter max-w-2xl mb-10 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
+                {content[profile].subtitle.highlight1 ? (
+                    <>
+                        {content[profile].subtitle.start}
+                        <span className="text-accent shadow-accent drop-shadow-[0_0_20px_rgba(141,53,255,0.5)]">{content[profile].subtitle.highlight1}</span>
+                        {content[profile].subtitle.middle}
+                        <span className="text-pink-500 drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">{content[profile].subtitle.highlight2}</span>
+                    </>
+                ) : (
+                    content[profile].subtitle
+                )}
             </p>
 
             {profile === 'all' ? (
@@ -44,7 +58,7 @@ export const Hero = ({profile, setProfile}) => {
                         <button
                             key={opt.id}
                             onClick={() => setProfile(opt.id)}
-                            className="group relative p-8 cursor-pointer rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition-all text-left hover:-translate-y-2"
+                            className="group relative p-8 cursor-pointer rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition-all text-left hover:-translate-y-2 ${}"
                         >
                             <div className={`w-12 h-12 rounded-lg ${opt.color} mb-6 shadow-lg shadow-black/50`}></div>
                             <h3 className="text-xl font-bold mb-2 uppercase">{opt.label}</h3>
@@ -61,7 +75,7 @@ export const Hero = ({profile, setProfile}) => {
                     onClick={() => setProfile('all')}
                     className="mt-10 px-8 py-3 border border-white/10 rounded-full hover:bg-white/5 transition-all text-gray-400 hover:text-white"
                 >
-                    ← Volver a la selección
+                    ← Atras
                 </button>
             )}
         </section>

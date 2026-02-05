@@ -2,7 +2,7 @@
 export const Hero = ({profile, setProfile}) => {
     const content = {
         all: {
-            title: "Construyo aplicaciones que funcionan y estrategias que convierten",
+            title: "Construyo Aplicaciones que Funcionan y Estrategias que Convierten",
             subtitle: {
                 start: "Soluciones ",
                 highlight1: "Tech ",
@@ -42,9 +42,9 @@ export const Hero = ({profile, setProfile}) => {
                 {content[profile].subtitle.highlight1 ? (
                     <>
                         {content[profile].subtitle.start}
-                        <span className="text-accent shadow-accent drop-shadow-[0_0_20px_rgba(141,53,255,0.5)]">{content[profile].subtitle.highlight1}</span>
+                        <span className="inline-block text-accent shadow-accent transition-all duration-500 hover:scale-103 hover:-translate-y-0.5 drop-shadow-[0_0_20px_rgba(141,53,255,0.5)]">{content[profile].subtitle.highlight1}</span>
                         {content[profile].subtitle.middle}
-                        <span className="text-pink-500 drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">{content[profile].subtitle.highlight2}</span>
+                        <span className="inline-block transition-all duration-500 hover:scale-103 hover:-translate-y-0.5 text-pink-500 drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">{content[profile].subtitle.highlight2}</span>
                     </>
                 ) : (
                     content[profile].subtitle
@@ -64,7 +64,7 @@ export const Hero = ({profile, setProfile}) => {
                             <h3 className="text-xl font-bold mb-2 uppercase">{opt.label}</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">{opt.desc}</p>
                             <span className="inline-block mt-4 text-xs font-bold tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                                EXPLORAR →
+                                EXPLORAR
                             </span>
                         </button>
                     ))}

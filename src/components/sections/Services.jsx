@@ -27,7 +27,7 @@ export const Services = () => {
     <section id="servicios" className="py-24 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-16">
         <h2 className="text-4xl font-black tracking-tighter mb-4">
-          Lo Que <span className="text-accent drop-shadow-[0_0_15px_rgba(141,53,255,0.6)]">Ofrezco</span>
+          Lo Que <span className="text-blueL hover:drop-shadow-[0_0_30px_rgb(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgb(0,255,247,0.6)]">Ofrezco</span>
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
           Soluciones integrales que combinan ingeniería y marketing para transformar la visión de tu negocio en realidad.
@@ -38,10 +38,13 @@ export const Services = () => {
         {services.map((service, index) => (
           <div 
             key={index} 
-            className="group p-8 rounded-3xl  border border-white/10 hover:border-accent/50 hover:shadow-[0_0_55px_rgba(141,53,255,0.1)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+            className="group p-8 rounded-3xl  border border-white/10 hover:border-blueL/50 hover:shadow-[0_0_55px_rgb(0,255,247,0.2)] transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
           >
             {/* Efecto de luz de fondo al pasar el mouse */}
-            <div className="absolute right-0 top-60 w-80 h-80 hover:bg-accent/30 rounded-full blur-3xl group-hover:bg-accent/30 transition-all"></div>
+            <div className="absolute right-0 top-1 w-80 h-40 bg-blueL/20 rounded-full blur-[100px] 
+                transition-all duration-[1500ms] ease-in-out
+                group-hover:top-1/1 group-hover:bg-blueL/30 group-hover:scale-110 
+                pointer-events-none"></div>
             
             <div className="text-4xl mb-6">{service.icon}</div>
             <h3 className="text-xl font-bold mb-4">{service.title}</h3>

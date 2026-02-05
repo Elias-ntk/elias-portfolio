@@ -10,6 +10,8 @@ export default {
         darkBg: '#050208',
         accent: '#8d35ff',
         secondary: '#ff0055',
+        blueL: 'rgb(0,255,247)',
+        pinkcust:' #f6339a',
       },
       
       fontFamily: {

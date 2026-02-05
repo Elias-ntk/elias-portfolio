@@ -35,10 +35,10 @@ export const Hero = ({profile, setProfile}) => {
 
     return (
         <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
-            <h1 className="font-black md:text-6xl tracking-tighter  max-w-4xl mb-4 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
+            <h1 className="font-black text-4xl md:text-6xl tracking-tighter max-w-4xl mb-4 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
                 {active.title}
             </h1>
-            <p className="text-4xl md:text-4xl font-bold tracking-tighter max-w-2xl mb-10 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
+            <p className="text-2xl md:text-4xl font-bold tracking-tighter max-w-2xl mb-10 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
                 {content[profile].subtitle.highlight1 ? (
                     <>
                         {content[profile].subtitle.start}
@@ -58,8 +58,14 @@ export const Hero = ({profile, setProfile}) => {
                         <button
                             key={opt.id}
                             onClick={() => setProfile(opt.id)}
-                            className="group relative p-8 cursor-pointer rounded-2xl bg-white/5 border border-white/10 hover:border-white/30 transition-all text-left hover:-translate-y-2 ${}"
+                            className="group relative overflow-hidden p-8 cursor-pointer rounded-2xl  border border-white/10 hover:border-accent/30 transition-all duration-400 hover:shadow-[0_0_55px_rgba(141,53,255,0.1)] text-left hover:-translate-y-2 ${}"
                         >
+                            <div className="absolute right-0 top-0 w-80 h-40 bg-accent/20 rounded-full blur-[100px] 
+                            transition-all duration-[1500ms] ease-in-out
+                            group-hover:top-1/1 group-hover:bg-accent/60 group-hover:scale-110 
+                            pointer-events-none">
+                                
+                            </div>
                             <div className={`w-12 h-12 rounded-lg ${opt.color} mb-6 shadow-lg shadow-black/50`}></div>
                             <h3 className="text-xl font-bold mb-2 uppercase">{opt.label}</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">{opt.desc}</p>

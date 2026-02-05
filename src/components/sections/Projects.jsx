@@ -1,3 +1,4 @@
+import { useState } from "react";
 import videoCalc from "../../assets/video-calculadora.mp4"
 import videoOlga from "../../assets/donaolga-1.mp4"
 
@@ -66,8 +67,8 @@ export const Projects = ({profile, onSelect}) => {
 
     return (
         <section className="py-20 px-4 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-12 text-center uppercase tracking-widest">
-                Proyectos <span className="text-accent underline">Destacados</span>
+            <h2 className="text-4xl font-black mb-12 text-center">
+                Proyectos <span className="text-pink-500 hover:drop-shadow-[0_0_30px_rgb(246,51,154,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgb(246,51,154,0.5)]">Destacados</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -75,8 +76,23 @@ export const Projects = ({profile, onSelect}) => {
                 <div 
                     key={project.id}
                     onClick={() => onSelect(project)}
-                    className="group cursor-pointer hover:-translate-y-1 hover:bg-white/10 bg-white/5 border border-white/10 p-6 rounded-2xl hover:border-accent/50 transition-all shadow-xl"
+                    className={`group relative overflow-hidden cursor-pointer hover:-translate-y-2 border transition-all duration-400 p-6 rounded-2xl shadow-xl 
+                        ${project.category === "dev"
+                            ? 'border-white/20 hover:border-accent/50 hover:shadow-[0_0_55px_rgb(141,53,255,0.2)]'
+                            : project.category === "growth"
+                            ? 'border-white/20 hover:border-pinkcust/50 hover:shadow-[0_0_55px_rgba(246,51,154,0.2)]'
+                            : 'border-white/20 hover:border-pinkcust/20 hover:shadow-[0_0_55px_rgba(141,53,255,0.3)]'
+                        }`}
                 >
+                    <div className={`absolute right-0 top-0 w-80 h-40 bg-pinkcust/0 rounded-full blur-[100px] 
+                            transition-all duration-[1500ms] ease-in-out
+                            group-hover:top-1/1  group-hover:scale-110 
+                            pointer-events-none ${project.category === "dev" 
+                                                    ? 'bg-accent/0 group-hover:bg-accent/60' 
+                                                    : project.category === "growth"
+                                                    ? 'bg-pinkcust/0 group-hover:bg-pinkcust/60'
+                                                    : 'bg-gradient-to-br from-accent/0 to-pinkcust/0 group-hover:from-accent/100 group-hover:to-pinkcust/100' // DEGRADADO HÍBRIDO
+                                                }`}></div>
                     <div className="h-48 bg-white/10 rounded-xl mb-6 overflow-hidden">
                     {/* Aquí irá una imagen de Photoshop/Canva después */}
                         <div className="w-full h-full flex items-center justify-center text-gray-500 italic">
@@ -92,7 +108,7 @@ export const Projects = ({profile, onSelect}) => {
                     
                     <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
-                        <span key={tag} className="text-[10px] bg-white/10 px-2 py-1 rounded">
+                        <span key={tag} className="text-[10px] px-3 py-1 rounded-full border border-gray-600 text-gray-600 font-bold">
                         {tag}
                         </span>
                     ))}

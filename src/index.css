@@ -3,7 +3,8 @@
 @theme {
   --color-darkBg: #050208;
   --color-accent: #8d35ff;
-  
+  --color-blueL: #00fff7;
+  --color-pinkcust: #f6339a;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 

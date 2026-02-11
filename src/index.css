@@ -2,9 +2,10 @@
 
 @theme {
   --color-darkBg: #050208;
-  --color-accent: #8d35ff;
+  --color-accent: #00fff7;
   --color-blueL: #00fff7;
-  --color-pinkcust: #f6339a;
+  --color-secondC: #263AFF;
+  --color-pinkcust: #00fff7;
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 }
 

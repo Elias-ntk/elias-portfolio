@@ -44,7 +44,7 @@ export const Hero = ({profile, setProfile}) => {
                         {content[profile].subtitle.start}
                         <span className="inline-block text-accent shadow-accent transition-all duration-500 hover:scale-103 hover:-translate-y-0.5 drop-shadow-[0_0_20px_rgba(141,53,255,0.5)]">{content[profile].subtitle.highlight1}</span>
                         {content[profile].subtitle.middle}
-                        <span className="inline-block transition-all duration-500 hover:scale-103 hover:-translate-y-0.5 text-pink-500 drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">{content[profile].subtitle.highlight2}</span>
+                        <span className="inline-block transition-all duration-500 hover:scale-103 hover:-translate-y-0.5 text-accent drop-shadow-[0_0_20px_rgba(236,72,153,0.5)]">{content[profile].subtitle.highlight2}</span>
                     </>
                 ) : (
                     content[profile].subtitle
@@ -58,11 +58,11 @@ export const Hero = ({profile, setProfile}) => {
                         <button
                             key={opt.id}
                             onClick={() => setProfile(opt.id)}
-                            className="group relative overflow-hidden p-8 cursor-pointer rounded-2xl  border border-white/10 hover:border-accent/30 transition-all duration-400 hover:shadow-[0_0_55px_rgba(141,53,255,0.1)] text-left hover:-translate-y-2 ${}"
+                            className="group relative overflow-hidden p-8 cursor-pointer rounded-2xl  border border-white/10 hover:border-accent/30 transition-all duration-800 hover:shadow-[0_0_55px_rgb(0,255,247,0.1)] text-left hover:-translate-y-2"
                         >
-                            <div className="absolute right-0 top-0 w-80 h-40 bg-accent/20 rounded-full blur-[100px] 
+                            <div className="absolute right-40 top-0 w-30 h-80 bg-accent/10 rounded-full blur-[100px] 
                             transition-all duration-[1500ms] ease-in-out
-                            group-hover:top-1/1 group-hover:bg-accent/60 group-hover:scale-110 
+                             
                             pointer-events-none">
                                 
                             </div>

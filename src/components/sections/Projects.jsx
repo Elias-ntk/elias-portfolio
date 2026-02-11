@@ -68,7 +68,7 @@ export const Projects = ({profile, onSelect}) => {
     return (
         <section className="py-20 px-4 max-w-6xl mx-auto">
             <h2 className="text-4xl font-black mb-12 text-center">
-                Proyectos <span className="text-pink-500 hover:drop-shadow-[0_0_30px_rgb(246,51,154,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgb(246,51,154,0.5)]">Destacados</span>
+                Proyectos <span className="text-blueL hover:drop-shadow-[0_0_30px_rgba(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgba(0,255,247,0.5)]">Destacados</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -76,31 +76,22 @@ export const Projects = ({profile, onSelect}) => {
                 <div 
                     key={project.id}
                     onClick={() => onSelect(project)}
-                    className={`group relative overflow-hidden cursor-pointer hover:-translate-y-2 border transition-all duration-400 p-6 rounded-2xl shadow-xl 
-                        ${project.category === "dev"
-                            ? 'border-white/20 hover:border-accent/50 hover:shadow-[0_0_55px_rgb(141,53,255,0.2)]'
-                            : project.category === "growth"
-                            ? 'border-white/20 hover:border-pinkcust/50 hover:shadow-[0_0_55px_rgba(246,51,154,0.2)]'
-                            : 'border-white/20 hover:border-pinkcust/20 hover:shadow-[0_0_55px_rgba(141,53,255,0.3)]'
-                        }`}
+                    className="group relative overflow-hidden cursor-pointer hover:-translate-y-2 border border-white/20 transition-all duration-400 p-6 rounded-2xl shadow-xl hover:border-blueL/50 hover:shadow-[0_0_55px_rgba(0,255,247,0.2)]"
                 >
-                    <div className={`absolute right-0 top-0 w-80 h-40 bg-pinkcust/0 rounded-full blur-[100px] 
+                    {/* Spotlight Unificado en BlueL */}
+                    <div className="absolute right-0 top-0 w-80 h-40 bg-blueL/0 rounded-full blur-[100px] 
                             transition-all duration-[1500ms] ease-in-out
-                            group-hover:top-1/1  group-hover:scale-110 
-                            pointer-events-none ${project.category === "dev" 
-                                                    ? 'bg-accent/0 group-hover:bg-accent/60' 
-                                                    : project.category === "growth"
-                                                    ? 'bg-pinkcust/0 group-hover:bg-pinkcust/60'
-                                                    : 'bg-gradient-to-br from-accent/0 to-pinkcust/0 group-hover:from-accent/100 group-hover:to-pinkcust/100' // DEGRADADO HÍBRIDO
-                                                }`}></div>
+                            group-hover:top-full group-hover:scale-110 
+                            group-hover:bg-blueL/30
+                            pointer-events-none"></div>
+
                     <div className="h-48 bg-white/10 rounded-xl mb-6 overflow-hidden">
-                    {/* Aquí irá una imagen de Photoshop/Canva después */}
                         <div className="w-full h-full flex items-center justify-center text-gray-500 italic">
                             Vista previa proyecto
                         </div>
                     </div>
                     
-                    <span className="text-xs font-bold text-accent uppercase tracking-widest">
+                    <span className="text-xs font-bold text-blueL uppercase tracking-widest">
                     {project.category}
                     </span>
                     <h3 className="text-xl font-bold mt-2 mb-3">{project.title}</h3>
@@ -108,7 +99,7 @@ export const Projects = ({profile, onSelect}) => {
                     
                     <div className="flex flex-wrap gap-2">
                     {project.tags.map(tag => (
-                        <span key={tag} className="text-[10px] px-3 py-1 rounded-full border border-gray-600 text-gray-600 font-bold">
+                        <span key={tag} className="text-[10px] px-3 py-1 rounded-full border border-gray-600 text-gray-600 font-bold group-hover:border-blueL/30 transition-colors">
                         {tag}
                         </span>
                     ))}

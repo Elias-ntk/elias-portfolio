@@ -8,10 +8,10 @@ export default {
     extend: {
       colors: {
         darkBg: '#050208',
-        accent: '#8d35ff',
+        accent: 'rgb(0,255,247)',
         secondary: '#ff0055',
         blueL: 'rgb(0,255,247)',
-        pinkcust:' #f6339a',
+        pinkcust:'rgb(0, 255, 229)' ,
       },
       
       fontFamily: {

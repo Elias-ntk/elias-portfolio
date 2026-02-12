@@ -97,9 +97,21 @@ export const Header = ({ profile, setProfile, onReset }) => {
                 {['dev', 'growth', 'hybrid'].map((p) => (
                     <button
                         key={p}
-                        onClick={() => setProfile(p)}
+                        onClick={() => {
+                            if (profile === p) {
+                                setProfile('all');
+                                setActiveTab('Home');
+                                onReset();
+                            } else {
+                                setProfile(p);
+                                setActiveTab('');
+                                onReset(); 
+                            }
+                        }}
                         className={`text-[10px] font-bold tracking-widest transition-all ${
-                            profile === p ? 'text-accent drop-shadow-[0_0_8px_#00fff7]' : 'text-gray-500 hover:text-gray-300'
+                            profile === p 
+                            ? 'text-accent drop-shadow-[0_0_8px_#00fff7] scale-110' 
+                            : 'text-gray-500 hover:text-gray-300'
                         }`}
                     >
                         {p.toUpperCase()}

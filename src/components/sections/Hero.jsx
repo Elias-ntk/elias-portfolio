@@ -28,14 +28,14 @@ export const Hero = ({profile, setProfile}) => {
 
     const options = [
         { id: 'dev', label: 'Desarrollador', desc: 'React, JS y soluciones escalables.', color: 'bg-accent', icon: <Code2 size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[soft-shake_6s_ease-in-out_infinite]"/>, },
-        { id: 'growth', label: 'Growth Marketer', desc: 'Estrategias de contenido y edición viral.', color: 'bg-pink-500', icon: <TrendingUp size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[float_6s_ease-in-out_infinite]"/>, },
-        { id: 'hybrid', label: 'Perfil Híbrido', desc: 'Programación impulsada por resultados.', color: 'bg-gradient-to-r from-accent to-pink-500', icon: <Cpu size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[glow-pulse_6s_ease-in-out_infinite]"/>, }
+        { id: 'growth', label: 'Growth Marketer', desc: 'Estrategias de contenido y edición viral.', color: 'bg-pink-500', icon: <TrendingUp size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[float_6.5s_ease-in-out_infinite]"/>, },
+        { id: 'hybrid', label: 'Perfil Híbrido', desc: 'Programación impulsada por resultados.', color: 'bg-gradient-to-r from-accent to-pink-500', icon: <Cpu size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[glow-pulse_7s_ease-in-out_infinite]"/>, }
     ]
 
     const active = content[profile];
 
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
+        <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
             <h1 className="font-black text-4xl md:text-6xl tracking-tighter max-w-4xl mb-4 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
                 {active.title}
             </h1>

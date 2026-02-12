@@ -16,8 +16,8 @@ export const Projects = ({profile, onSelect}) => {
                 mofu: "Landing page persuasiva con catálogo en Sanity.",
                 bofu: "Cierre de ventas vía WhatsApp Business."
             },
-            desc: "Solución potenciada con IA para optimizar ventas mejorando la velocidad de captación y conversión de posibles compradores con buena experiencia de interfaz, menu, y redirección a la venta bia WhatsApp Business con implementacion de Cms con Sanity creando pagina admin para la administacion de productos/precios/categoria",
-            tags: ["SEO", "IA", "Growth", "Pixel","Logic", "React", "Css", "Js", "Bootstrap", "Git", "CMS", "Sanity"],
+            desc: "Solución potenciada con IA para optimizar ventas mejorando la velocidad de captación y conversión de posibles compradores con buena experiencia de interfaz, menu, y redirección a la venta via WhatsApp Business con implementación de Cms con Sanity creando pagina admin para la administracion de productos/precios/categoria",
+            tags: ["SEO", "IA", "Growth", "Pixel","Logica", "React", "Css", "Js", "Bootstrap", "Git", "CMS", "Sanity"],
             Link: "https://donaolga.vercel.app/"
         },
         {
@@ -32,8 +32,8 @@ export const Projects = ({profile, onSelect}) => {
                 mofu: "Beacons links con opciones a compra o página web del producto",
                 bofu: "Cierre de ventas vía mensajes privado (instragram) redireccionando al link de compra directa o por beacons en TikTok/Instagram"
             },
-            desc: "Optimización de contenido para Instagram, Tiktok, Facbook y Youtube integrando estrategia Inbound para generar un embudo de ventas en hotmart como principal fase atracción (TOFU) luego consideración (MOFU) y terminar con la conversión (BOFU).",
-            tags: ["Marketing", "CapCut", "Strat", "Organic"],
+            desc: "Optimización de contenido para Instagram, Tiktok, Facebook y Youtube integrando estrategia Inbound para generar un embudo de ventas en hotmart como principal fase atracción (TOFU) luego consideración (MOFU) y terminar con la conversión (BOFU).",
+            tags: ["Marketing", "CapCut", "Estrategia", "Organico"],
             Link: "#"
         },
         {
@@ -55,7 +55,7 @@ export const Projects = ({profile, onSelect}) => {
             fullDesc: "",
             results: ["100% Responsivo", "Código Limpio", "Logica pura JS"],
             desc: "App desarrollada con html, css y logica pura js integrando modo Claro / Oscuro con estilo minimalista y aplicando media queries para el diseño responsivo de calculadora.",
-            tags: ["Logic", "Html", "Css", "Js", "Media Query","Dark", "Light"],
+            tags: ["Logica", "Html", "Css", "Js", "Media Query","Dark", "Light"],
             Link: "https://calculator-2022-2d357.web.app/"
         }
     ];
@@ -66,9 +66,9 @@ export const Projects = ({profile, onSelect}) => {
     });
 
     return (
-        <section className="py-20 px-4 max-w-6xl mx-auto">
+        <section id="experiencia" className="py-20 px-4 max-w-6xl mx-auto">
             <h2 className="text-4xl font-black mb-12 text-center">
-                Proyectos <span className="text-blueL hover:drop-shadow-[0_0_30px_rgba(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgba(0,255,247,0.5)]">Destacados</span>
+                <span className="text-blueL hover:drop-shadow-[0_0_30px_rgba(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgba(0,255,247,0.5)]">Experiencia</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

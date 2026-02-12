@@ -26,8 +26,8 @@ export const Services = () => {
    return (
     <section id="servicios" className="py-24 px-4 max-w-6xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl font-black tracking-tighter mb-4">
-          Lo Que <span className="text-blueL hover:drop-shadow-[0_0_30px_rgb(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgb(0,255,247,0.6)]">Ofrezco</span>
+        <h2 className="text-4xl font-black  mb-4">
+          Mis <span className="text-blueL hover:drop-shadow-[0_0_30px_rgb(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgb(0,255,247,0.6)]">Servicios</span>
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto">
           Soluciones integrales que combinan ingeniería y marketing para transformar la visión de tu negocio en realidad.

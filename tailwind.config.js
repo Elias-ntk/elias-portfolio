@@ -12,7 +12,10 @@ export default {
         secondary: '#ff0055',
         blueL: 'rgb(0,255,247)',
         pinkcust:'rgb(0, 255, 229)' ,
+        
       },
+
+      
       
       fontFamily: {
         sans: ['"Plus Jakarta Sans"', 'sans-serif'],

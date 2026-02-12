@@ -1,3 +1,4 @@
+import { Code2, TrendingUp, Cpu } from "lucide-react";
 
 export const Hero = ({profile, setProfile}) => {
     const content = {
@@ -11,24 +12,24 @@ export const Hero = ({profile, setProfile}) => {
             }
         },
         dev: {
-        title: "Construyo software escalable",
-        subtitle: "Desarrollador enfocado en código limpio, React y soluciones que resuelven problemas reales."
+            title: "Construyo software escalable",
+            subtitle: "Desarrollador enfocado en código limpio, React y soluciones que resuelven problemas reales.",
         },
         growth: {
             title: "Impulso tu crecimiento digital",
-            subtitle: "Growth Marketer especializado en estrategias de contenido, edición viral y optimización de ventas."
+            subtitle: "Growth Marketer especializado en estrategias de contenido, edición viral y optimización de ventas.",
         },
         hybrid: {
             title: "Ingeniería aplicada al Marketing",
-            subtitle: "Uso mis habilidades de programación para potenciar estrategias de marketing y escalar negocios de forma técnica."
+            subtitle: "Uso mis habilidades de programación para potenciar estrategias de marketing y escalar negocios de forma técnica.",
         }
 
     };
 
     const options = [
-        { id: 'dev', label: 'Desarrollador', desc: 'React, JS y soluciones escalables.', color: 'bg-accent' },
-        { id: 'growth', label: 'Growth Marketer', desc: 'Estrategias de contenido y edición viral.', color: 'bg-pink-500' },
-        { id: 'hybrid', label: 'Perfil Híbrido', desc: 'Programación impulsada por resultados.', color: 'bg-gradient-to-r from-accent to-pink-500' }
+        { id: 'dev', label: 'Desarrollador', desc: 'React, JS y soluciones escalables.', color: 'bg-accent', icon: <Code2 size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[soft-shake_6s_ease-in-out_infinite]"/>, },
+        { id: 'growth', label: 'Growth Marketer', desc: 'Estrategias de contenido y edición viral.', color: 'bg-pink-500', icon: <TrendingUp size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[float_6s_ease-in-out_infinite]"/>, },
+        { id: 'hybrid', label: 'Perfil Híbrido', desc: 'Programación impulsada por resultados.', color: 'bg-gradient-to-r from-accent to-pink-500', icon: <Cpu size={32} className="text-accent transition-transform duration-500 group-hover:scale-105 group-hover:rotate-12 animate-[glow-pulse_6s_ease-in-out_infinite]"/>, }
     ]
 
     const active = content[profile];
@@ -66,7 +67,7 @@ export const Hero = ({profile, setProfile}) => {
                             pointer-events-none">
                                 
                             </div>
-                            <div className={`w-12 h-12 rounded-lg ${opt.color} mb-6 shadow-lg shadow-black/50`}></div>
+                            <div className={`mb-6 `}>{opt.icon}</div>
                             <h3 className="text-xl font-bold mb-2 uppercase">{opt.label}</h3>
                             <p className="text-sm text-gray-400 leading-relaxed">{opt.desc}</p>
                             <span className="inline-block mt-4 text-xs font-bold tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity">

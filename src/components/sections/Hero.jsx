@@ -2,28 +2,58 @@ import { Code2, TrendingUp, Cpu } from "lucide-react";
 
 export const Hero = ({profile, setProfile}) => {
     const content = {
-        all: {
-            title: "Construyo Aplicaciones que Funcionan y Estrategias que Convierten",
-            subtitle: {
-                start: "Soluciones ",
-                highlight1: "Tech ",
-                middle: "con Mentalidad de ",
-                highlight2: "Growth"
-            }
+    all: {
+        title: {
+            start: "Escalo tu ",
+            highlight: "Negocio ",
+            end: "con Código y Estrategia Digital"
         },
-        dev: {
-            title: "Construyo software escalable",
-            subtitle: "Desarrollador enfocado en código limpio, React y soluciones que resuelven problemas reales.",
-        },
-        growth: {
-            title: "Impulso tu crecimiento digital",
-            subtitle: "Growth Marketer especializado en estrategias de contenido, edición viral y optimización de ventas.",
-        },
-        hybrid: {
-            title: "Ingeniería aplicada al Marketing",
-            subtitle: "Uso mis habilidades de programación para potenciar estrategias de marketing y escalar negocios de forma técnica.",
+        subtitle: {
+            start: "Soluciones ",
+            highlight1: "Tech ",
+            middle: " con Mentalidad de ",
+            highlight2: "Growth"
         }
-
+    },
+    dev: {
+        title: {
+            start: "Código ",
+            highlight: "Escalable ",
+            end: " que impulsa Negocios"
+        },
+        subtitle: {
+            start: "Desarrollo con ",
+            highlight1: "Código Limpio ",
+            middle: " y soluciones para problemas ",
+            highlight2: "Reales"
+        }
+    },
+    growth: {
+        title: {
+            start: "Contenido ",
+            highlight: "Viral",
+            end: ", Datos que Venden"
+        },
+        subtitle: {
+            start: "Estrategias de ",
+            highlight1: "Marketing ",
+            middle: " enfocadas en la ",
+            highlight2: "Conversión"
+        }
+    },
+    hybrid: {
+        title: {
+            start: "Ingeniería ",
+            highlight: "Aplicada ",
+            end: "al Marketing"
+        },
+        subtitle: {
+            start: "Desarrollo ",
+            highlight1: "Técnico ",
+            middle: " potenciado por ",
+            highlight2: "Growth Marketing"
+        }
+    }
     };
 
     const options = [
@@ -37,9 +67,11 @@ export const Hero = ({profile, setProfile}) => {
     return (
         <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-10">
             <h1 className="font-black text-4xl md:text-6xl tracking-tighter max-w-4xl mb-4 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
-                {active.title}
+                {active.title.start}
+                <span className="text-accent">{active.title.highlight}</span>
+                {active.title.end}
             </h1>
-            <p className="text-2xl md:text-4xl font-bold tracking-tighter max-w-2xl mb-10 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
+            <p className="text-2xl md:text-2xl italic tracking-tighter max-w-2xl mb-10 drop-shadow-[0_0_30px_rgb(0,255,247,0.3)]">
                 {content[profile].subtitle.highlight1 ? (
                     <>
                         {content[profile].subtitle.start}
@@ -52,39 +84,43 @@ export const Hero = ({profile, setProfile}) => {
                 )}
             </p>
 
-            {profile === 'all' ? (
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
-                    {options.map((opt) => (
+           {/* Grid de opciones - SIEMPRE VISIBLE */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl w-full">
+                {options.map((opt) => {
+                    const isSelected = profile === opt.id;
+                    return (
                         <button
                             key={opt.id}
-                            onClick={() => setProfile(opt.id)}
-                            className="group relative overflow-hidden p-8 cursor-pointer rounded-2xl  border border-white/10 hover:border-accent/30 transition-all duration-800 hover:shadow-[0_0_55px_rgb(0,255,247,0.1)] text-left hover:-translate-y-2"
+                            // Si clickeás el que ya está, vuelve a 'all'. Si no, cambia al nuevo.
+                            onClick={() => setProfile(isSelected ? 'all' : opt.id)}
+                            className={`group relative overflow-hidden p-8 cursor-pointer rounded-2xl border transition-all duration-800 text-left hover:-translate-y-2
+                                ${isSelected 
+                                    ? 'border-accent shadow-[0_0_55px_rgb(0,255,247,0.15)] bg-accent/5' 
+                                    : 'border-white/10 hover:border-accent/30 hover:shadow-[0_0_55px_rgb(0,255,247,0.1)]'}`}
                         >
-                            <div className="absolute right-40 top-0 w-30 h-80 bg-accent/10 rounded-full blur-[100px] 
-                            transition-all duration-[1500ms] ease-in-out
-                             
-                            pointer-events-none">
-                                
+                            <div className={`absolute right-40 top-0 w-30 h-80 rounded-full blur-[100px] transition-all duration-[1500ms] ease-in-out pointer-events-none
+                                ${isSelected ? 'bg-accent/20 opacity-100' : 'bg-accent/15 opacity-100 group-hover:opacity-100'}`}>
                             </div>
-                            <div className={`mb-6 `}>{opt.icon}</div>
-                            <h3 className="text-xl font-bold mb-2 uppercase">{opt.label}</h3>
-                            <p className="text-sm text-gray-400 leading-relaxed">{opt.desc}</p>
-                            <span className="inline-block mt-4 text-xs font-bold tracking-widest text-accent opacity-0 group-hover:opacity-100 transition-opacity">
-                                EXPLORAR
+                            
+                            <div className={`mb-6 transition-transform duration-500 ${isSelected ? 'scale-110' : ''}`}>
+                                {opt.icon}
+                            </div>
+                            
+                            <h3 className={`text-xl font-bold mb-2 uppercase ${isSelected ? 'text-accent' : ''}`}>
+                                {opt.label}
+                            </h3>
+                            <p className="text-sm text-gray-400 leading-relaxed">
+                                {opt.desc}
+                            </p>
+                            
+                            <span className={`inline-block mt-4 text-xs font-bold tracking-widest text-accent transition-opacity
+                                ${isSelected ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                                {isSelected ? 'SELECCIONADO' : 'EXPLORAR'}
                             </span>
                         </button>
-                    ))}
-                </div>
-            ) : (
-                
-                <button 
-                    onClick={() => setProfile('all')}
-                    className="mt-10 px-8 py-3 border border-white/10 rounded-full hover:bg-white/5 transition-all text-gray-400 hover:text-white"
-                >
-                    ← Atras
-                </button>
-            )}
+                    );
+                })}
+            </div>
         </section>
     );
 };

@@ -51,7 +51,7 @@ export const Header = ({ profile, setProfile, onReset }) => {
 
             {/* 2. Navegación (Centro) */}
             <nav className="hidden md:flex gap-8">
-            {['Home', 'Servicios', 'Experiencia', 'Sobre Mi'].map((item) => {
+            {['Home', 'Sobre Mi', 'Servicios', 'Experiencia'].map((item) => {
                 const isSelected = activeTab === item;
 
                 return (

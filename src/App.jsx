@@ -5,6 +5,7 @@ import { Hero } from "./components/sections/Hero";
 import { Projects } from "./components/sections/Projects";
 import { ProjectDetail } from "./components/sections/ProjectDetail";
 import { Services } from "./components/sections/Services";
+import { SobreMi } from "./components/sections/SobreMi";
 
 
 function App () {
@@ -19,6 +20,7 @@ function App () {
       ) : (
         <>
         <Hero profile={profile} setProfile={setProfile}/>
+        <SobreMi />
         <Services />
         <Projects profile={profile} onSelect={setSelectedProject}/>
         </>

@@ -6,7 +6,7 @@ import { Projects } from "./components/sections/Projects";
 import { ProjectDetail } from "./components/sections/ProjectDetail";
 import { Services } from "./components/sections/Services";
 import { SobreMi } from "./components/sections/SobreMi";
-
+import { Footer } from "./components/sections/Footer";
 
 function App () {
   const [profile, setProfile] = useState('all');
@@ -23,6 +23,7 @@ function App () {
         <SobreMi />
         <Services />
         <Projects profile={profile} onSelect={setSelectedProject}/>
+        <Footer/>
         </>
       )}
     </main>

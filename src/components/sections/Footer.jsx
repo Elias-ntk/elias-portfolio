@@ -7,18 +7,18 @@ export const Footer = () => {
         { name: "Sobre Mí", href: "#sobre-mi" },
         { name: "Servicios", href: "#servicios" },
         { name: "Proyectos", href: "#proyectos" },
-        { name: "Contacto", href: "#contacto" },
+        { name: "Trabajemos Juntos", href: "#contacto" },
     ],
     social: [
-        { name: "LinkedIn", href: "https://linkedin.com/in/tu-usuario", icon: <Linkedin size={18} /> },
-        { name: "GitHub", href: "https://github.com/tu-usuario", icon: <Github size={18} /> },
-        { name: "Instagram", href: "https://instagram.com/tu-usuario", icon: <Instagram size={18} /> },
-        { name: "Email", href: "mailto:tu@email.com", icon: <Mail size={18} /> },
+        { name: "LinkedIn", href: "https://linkedin.com/in/tu-usuario", icon: <Linkedin size={28} /> },
+        { name: "GitHub", href: "https://github.com/tu-usuario", icon: <Github size={28} /> },
+        { name: "Instagram", href: "https://instagram.com/tu-usuario", icon: <Instagram size={28} /> },
+        { name: "Email", href: "mailto:tu@email.com", icon: <Mail size={28} /> },
     ]
     };
 
   return (
-    <footer className="bg-darkBg pt-20 pb-10 px-4 border-t border-white/5 ">
+    <footer className="bg-gradient-to-t from-darkBgLite/20 to-darkBg pt-20 pb-10 px-4 border-t border-white/5 ">
       {/* Contenedor más estrecho (max-w-4xl) para centrar la información */}
       <div className="max-w-4xl mx-auto flex flex-col items-center">
         
@@ -51,41 +51,39 @@ export const Footer = () => {
           
           {/* Links de Navegación Cortos */}
           <nav className="flex gap-5 mx-6">
-            {['Sobre Mí', 'Servicios', 'Contacto'].map((item) => (
+            {footerLinks.explore.map((link) => (
               <a 
-                key={item} 
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
+                key={link.name} 
+                href={link.href}
                 className="text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-blueL transition-colors"
               >
-                {item}
+                {link.name}
               </a>
             ))}
           </nav>
 
           {/* Redes con estilo minimalista (sin círculos pesados) */}
-          <div className="flex gap-6 mx-6">
-            {[
-              { icon: <Linkedin size={30} />, href: "#" },
-              { icon: <Github size={30} />, href: "#" },
-              { icon: <Instagram size={30} />, href: "#" },
-              { icon: <Mail size={30} />, href: "#" }
-            ].map((social, i) => (
-              <a 
-                key={i} 
-                href={social.href}
-                className="text-gray-500 hover:text-blueL hover:scale-110 transition-all duration-300"
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
+            <div className="flex gap-6 mx-6">
+                {footerLinks.social.map((social, i) => (
+                    <a 
+                    key={i} 
+                    href={social.href}
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-accent/40 hover:text-blueL hover:scale-110 transition-all duration-300"
+                    title={social.name} 
+                    >
+                    {social.icon}
+                    </a>
+                ))}
+            </div>
         </div>
 
         {/* BLOQUE INFERIOR: Legal & Ubicación */}
-        <div className="w-full mt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] font-bold uppercase tracking-[0.2em] text-gray-600">
+        <div className=" mt-10 flex flex-col md:flex-row justify-between items-center gap-4 text-[9px] font-bold uppercase tracking-[0.2em] text-gray-600">
           <p>© 2026 ELIAS SGV — ALL RIGHTS RESERVED</p>
           <div className="flex items-center gap-1">
-            <span>BASED IN</span>
+            <span>HECHO EN</span>
             <span className="text-gray-400">ARGENTINA</span>
             <span className="ml-1">🇦🇷</span>
           </div>

@@ -68,7 +68,7 @@ export const Projects = ({profile, onSelect}) => {
     return (
         <section id="experiencia" className="py-20 px-4 max-w-6xl mx-auto">
             <h2 className="text-4xl font-black mb-12 text-center">
-                <span className="text-blueL hover:drop-shadow-[0_0_30px_rgba(0,255,247,0.9)] transition-all duration-400 drop-shadow-[0_0_15px_rgba(0,255,247,0.5)]">Experiencia</span>
+                <span className="text-blueL hover:drop-shadow-[0_0_20px_rgba(0,255,247,0.6)] transition-all duration-400 drop-shadow-[0_0_15px_rgba(0,255,247,0.6)]">Experiencia</span>
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

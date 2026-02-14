@@ -98,8 +98,8 @@ export const Hero = ({profile, setProfile}) => {
                                     ? 'border-accent shadow-[0_0_55px_rgb(0,255,247,0.15)] bg-accent/5' 
                                     : 'border-white/10 hover:border-accent/30 hover:shadow-[0_0_55px_rgb(0,255,247,0.1)]'}`}
                         >
-                            <div className={`absolute right-40 top-0 w-30 h-80 rounded-full blur-[100px] transition-all duration-[1500ms] ease-in-out pointer-events-none
-                                ${isSelected ? 'bg-accent/20 opacity-100' : 'bg-accent/15 opacity-100 group-hover:opacity-100'}`}>
+                            <div className={`absolute right-60 top-0 w-30 h-50 rounded-full blur-[100px] transition-all duration-[1500ms] ease-in-out pointer-events-none
+                                ${isSelected ? 'bg-accent/20 opacity-80 right-10' : 'group-hover:right-10 duration-300 bg-accent/20 opacity-100 group-hover:opacity-100'}`}>
                             </div>
                             
                             <div className={`mb-6 transition-transform duration-500 ${isSelected ? 'scale-110' : ''}`}>

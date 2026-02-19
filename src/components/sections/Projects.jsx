@@ -1,11 +1,16 @@
 import { useState } from "react";
 import videoCalc from "../../assets/video-calculadora.mp4"
 import videoOlga from "../../assets/donaolga-1.mp4"
+import imgCardDonaOlga from "../../assets/ImgCard-donaolga.png"
+import imgCardStrat from "../../assets/ImgCard-estrategiaViral.png"
+import imgCardPortfolio from "../../assets/ImgCard-portfolio.png"
+import imgCardCalculator from "../../assets/ImgCard-calculator.png"
 
 export const Projects = ({profile, onSelect}) => {
     const projectData = [
         {
             id: 1,
+            image: imgCardDonaOlga,
             title: "Web de Negocios",
             category: "hybrid",
             videoUrl: videoOlga,
@@ -22,6 +27,7 @@ export const Projects = ({profile, onSelect}) => {
         },
         {
             id: 2,
+            image: imgCardStrat,
             title: "Estrategia Growth Viral",
             category: "growth",
             videoUrl: "",
@@ -38,6 +44,7 @@ export const Projects = ({profile, onSelect}) => {
         },
         {
             id: 3,
+            image: imgCardPortfolio,
             title: "Portafolio Web",
             category: "dev",
             videoUrl: "",
@@ -49,6 +56,7 @@ export const Projects = ({profile, onSelect}) => {
         },
         {
             id: 4,
+            image: imgCardCalculator,
             title: "Calculadora Minimalista",
             category: "dev",
             videoUrl: videoCalc,
@@ -67,46 +75,61 @@ export const Projects = ({profile, onSelect}) => {
 
     return (
         <section id="experiencia" className="py-20 px-4 max-w-6xl mx-auto">
-            <h2 className="text-4xl font-black mb-12 text-center">
-                <span className="text-blueL hover:drop-shadow-[0_0_20px_rgba(0,255,247,0.6)] transition-all duration-400 drop-shadow-[0_0_15px_rgba(0,255,247,0.6)]">Experiencia</span>
-            </h2>
+      <h2 className="text-4xl font-black mb-12 text-center">
+        <span className="text-blueL drop-shadow-[0_0_15px_rgba(0,255,247,0.6)]">
+          Experiencia
+        </span>
+      </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProjects.map((project) => (
-                <div 
-                    key={project.id}
-                    onClick={() => onSelect(project)}
-                    className="group relative overflow-hidden cursor-pointer hover:-translate-y-2 border border-white/20 transition-all duration-400 p-6 rounded-2xl shadow-xl hover:border-blueL/50 hover:shadow-[0_0_55px_rgba(0,255,247,0.2)]"
-                >
-                    {/* Spotlight Unificado en BlueL */}
-                    <div className="absolute right-0 top-0 w-80 h-40 bg-blueL/0 rounded-full blur-[100px] 
-                            transition-all duration-[1500ms] ease-in-out
-                            group-hover:top-full group-hover:scale-110 
-                            group-hover:bg-blueL/30
-                            pointer-events-none"></div>
-
-                    <div className="h-48 bg-white/10 rounded-xl mb-6 overflow-hidden">
-                        <div className="w-full h-full flex items-center justify-center text-gray-500 italic">
-                            Vista previa proyecto
-                        </div>
-                    </div>
-                    
-                    <span className="text-xs font-bold text-blueL uppercase tracking-widest">
-                    {project.category}
-                    </span>
-                    <h3 className="text-xl font-bold mt-2 mb-3">{project.title}</h3>
-                    <p className="text-sm text-gray-400 mb-6">{project.desc}</p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                    {project.tags.map(tag => (
-                        <span key={tag} className="text-[10px] px-3 py-1 rounded-full border border-gray-600 text-gray-600 font-bold group-hover:border-blueL/30 transition-colors">
-                        {tag}
-                        </span>
-                    ))}
-                    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredProjects.map((project) => (
+          <div
+            key={project.id}
+            onClick={() => onSelect(project)}
+            className="group relative h-[450px] overflow-hidden cursor-pointer rounded-3xl  transition-all duration-500 hover:border-blueL/50"
+          >
+            {/* IMAGEN DE FONDO: Cubre toda la tarjeta */}
+            <div className="absolute inset-0">
+              {project.image ? (
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-103"
+                />
+              ) : (
+                <div className="w-full h-full bg-gradient-to-b from-gray-800 to-darkBg flex items-center justify-center italic text-gray-500">
+                  Sin imagen
                 </div>
-                ))}
+              )}
+              {/* Overlay Gradiente: Oscurece la base para que el texto se lea */}
+              <div className="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/90 to-transparent opacity-0 group-hover:opacity-94 transition-opacity transition-all duration-600" />
             </div>
-        </section>
+
+            {/* CONTENIDO: Posicionado al fondo */}
+            <div className="absolute inset-0 p-8 flex flex-col justify-end transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+              <span className="text-[10px] font-bold text-blueL uppercase tracking-[0.2em] mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {project.category}
+              </span>
+              <h3 className="text-2xl font-black text-white mb-2 leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                {project.title}
+              </h3>
+              <p className="text-sm text-gray-300 line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 mb-4">
+                {project.desc}
+              </p>
+              
+              <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                {project.tags.slice(0, 3).map(tag => (
+                  <span key={tag} className="text-[9px] px-2 py-1 rounded-full bg-accent/5 backdrop-blur-md border border-accent/20 text-accent font-bold">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            
+          </div>
+        ))}
+      </div>
+    </section>
     );
 }

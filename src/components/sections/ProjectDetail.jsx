@@ -13,26 +13,39 @@ export const ProjectDetail = ({ project, onBack }) => {
         
         {/* LADO IZQUIERDO: Visuales (Sticky) */}
         <div className="lg:w-1/2">
-          <div className="lg:sticky lg:top-24 space-y-8">
-            <div className="aspect-video bg-white/5 rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,255,247,0.15)]">
-              {project.videoUrl ? (
-                <video key={project.videoUrl} controls className="w-full h-full object-cover">
-                  <source src={project.videoUrl} type="video/mp4" />
-                </video>
-              ) : (
-                <div className="w-full h-full flex items-center justify-center text-gray-500 italic">
-                  Visualización previa
-                </div>
-              )}
-            </div>
-
-            {project.images && project.images.map((img, index) => (
-              <div key={index} className="rounded-2xl overflow-hidden border border-white/5 shadow-xl">
-                <img src={img} alt="Vista previa" className="w-full h-auto" />
-              </div>
-            ))}
-          </div>
+  <div className="lg:sticky lg:top-24">
+    {/* Contenedor sin bordes, sin sombras, sin fondo */}
+    <div className="w-full">
+      {project.videoUrl ? (
+        /* Si hay video, mantenemos el contenedor controlado */
+        <div className="aspect-video bg-white/5 rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(0,255,247,0.15)]">
+          <video key={project.videoUrl} controls className="w-full h-full object-cover">
+            <source src={project.videoUrl} type="video/mp4" />
+          </video>
         </div>
+      ) : (
+        /* SI ES IMAGEN: Limpieza total. Sin aspect-video, sin bordes de contenedor */
+        <div className="flex flex-col gap-8 items-center">
+           <img 
+              src={project.image} 
+              alt={project.title} 
+              className="w-full md:max-w-xs h-auto rounded-3xl object-contain animate-fadeIn"
+           />
+           
+           {/* Si tienes imágenes adicionales en el array 'images', se verán igual abajo */}
+           {project.images && project.images.map((img, index) => (
+             <img 
+               key={index}
+               src={img} 
+               alt={`Detalle ${index}`} 
+               className="w-full h-auto rounded-3xl object-contain"
+             />
+           ))}
+        </div>
+      )}
+    </div>
+  </div>
+</div>
 
         {/* LADO DERECHO: Explicación y Detalles */}
         <div className="lg:w-1/2 space-y-10">

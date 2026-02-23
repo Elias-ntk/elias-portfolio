@@ -3,7 +3,7 @@ export const Header = ({ profile, setProfile, onReset }) => {
     const [activeTab, setActiveTab] = useState('Home');
 
     useEffect(() => {
-    const sections = ['hero', 'servicios', 'experiencia', 'sobre-mi'];
+    const sections = ['hero', 'servicios', 'experiencia', 'sobre-mí'];
     
     const observerOptions = {
         root: null, 
@@ -51,7 +51,7 @@ export const Header = ({ profile, setProfile, onReset }) => {
 
             {/* 2. Navegación (Centro) */}
             <nav className="hidden md:flex gap-8">
-            {['Home', 'Sobre Mi', 'Servicios', 'Experiencia'].map((item) => {
+            {['Home', 'Sobre Mí', 'Servicios', 'Experiencia'].map((item) => {
                 const isSelected = activeTab === item;
 
                 return (

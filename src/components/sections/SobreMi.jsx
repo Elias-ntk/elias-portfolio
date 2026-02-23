@@ -1,10 +1,13 @@
-import { GraduationCap, Code, Rocket, Video, Palette, BrainCircuit } from "lucide-react";
+import { GraduationCap, Code, Rocket, Video, Palette, BrainCircuit, CheckCircle2, ExternalLink, CircleDashed } from "lucide-react";
 
 export const SobreMi = () => {
     return (
         <section id="sobre-mi" className="py-20 px-4 max-w-6xl mx-auto">
+            <div className="flex justify-center mb-4">
+                <span className="px-4 py-1 text-[20px] mx-text-xs font-bold hover:tracking-[0.3em] text-accent drop-shadow-[0_0_9px_rgb(0,255,247,0.6)] transition-all duration-600" >Sobre Mí</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-black tracking-tighter mb-12 text-center">
-                Detrás del <span className="text-accent drop-shadow-[0_0_15px_rgb(0,255,247,0.6)] hover:drop-shadow-[0_0_20px_rgb(0,255,247,0.6)] transition-all duration-400">Código</span> y la <span className="text-accent drop-shadow-[0_0_15px_rgb(0,255,247,0.6)] hover:drop-shadow-[0_0_20px_rgb(0,255,247,0.6)] transition-all duration-400">Estrategia</span>
+                Detrás del <span className="text-accent drop-shadow-[0_0_15px_rgb(0,255,247,0.5)] hover:drop-shadow-[0_0_20px_rgb(0,255,247,0.5)] transition-all duration-400">Código</span> y la <span className="text-accent drop-shadow-[0_0_15px_rgb(0,255,247,0.5)] hover:drop-shadow-[0_0_20px_rgb(0,255,247,0.5)] transition-all duration-400">Estrategia</span>
             </h2>
             
             {/* Quitamos auto-rows fijo para que no estire todas las cajas por igual */}
@@ -36,7 +39,7 @@ export const SobreMi = () => {
                         <span className="text-[10px] tracking-widest text-gray-500 uppercase font-bold">Herramientas & Stack</span>
                     </div>
                     
-                    <div className="space-y-4">
+                    <div className="space-y-4 md:space-y-9">
                         {/* Desarrollo */}
                         <div className="flex flex-wrap gap-2">
                             <span className="text-[10px] w-full text-gray-600 font-bold uppercase tracking-widest">Desarrollo</span>
@@ -63,25 +66,71 @@ export const SobreMi = () => {
                     </div>
                 </div>
 
-                {/* FORMACIÓN Y APRENDIZAJE UNIFICADO - Ocupa el lugar de IA & Aprendizaje */}
-                <div className="md:col-span-2 bg-darkBg/10 backdrop-blur-lg border border-white/10 rounded-3xl p-6 flex flex-col md:flex-row items-center gap-6 group hover:shadow-[0_0_55px_rgb(0,255,247,0.1)] hover:border-accent/30 hover:scale-103 transition-all duration-400">
+                {/* FORMACIÓN Y APRENDIZAJE UNIFICADO */}
+                <div className="md:col-span-2 bg-darkBg/10 backdrop-blur-lg border border-white/10 rounded-3xl p-6 flex flex-col md:flex-row items-center gap-6 group hover:shadow-[0_0_55px_rgba(0,255,247,0.1)] hover:border-accent/30 hover:scale-103 transition-all duration-400">
                     <div className="h-16 w-16 rounded-2xl bg-accent/10 flex items-center justify-center shrink-0 border border-accent/20">
                         <GraduationCap className="text-accent" size={32} />
                     </div>
+                    
                     <div className="grid grid-cols-2 gap-4 w-full">
+                        {/* Coderhouse */}
                         <div>
-                            <h4 className="text-[10px] font-bold uppercase text-gray-500 mb-2 tracking-widest text-left">Certificaciones Coder</h4>
-                            <ul className="text-[10px] text-gray-300 space-y-1 text-left">
-                                <li>• Growth Marketing <span className="text-accent/50">(2026)</span></li>
-                                <li>• Publicidad Avanzada <span className="text-accent/50">(2026)</span></li>
-                                <li>• Community Manager <span className="text-white/50">(2025)</span></li>
+                            <h4 className="text-[10px] font-bold uppercase text-gray-500 mb-3 tracking-widest text-left">Certificaciones Coder</h4>
+                            <ul className="text-[10px] text-gray-300 space-y-2 text-left">
+                                {[
+                                    { name: 'Growth Marketing', year: '2026', link: '#', status: 'progress' },
+                                    { name: 'Publicidad Avanzada', year: '2026', link: '#', status: 'progress' },
+                                    { name: 'Community Manager', year: '2025', link: 'https://pub.coderhouse.com/certificates/0f233c21-c826-4faa-bfba-71fe2d371d97?v=1', status: 'done' }
+                                ].map((cert) => (
+                                    <li key={cert.name}>
+                                        <div className={`flex items-center gap-2 ${cert.status === 'done' ? 'group/item cursor-pointer' : 'opacity-60'}`}>
+                                            {cert.status === 'done' ? (
+                                                <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+                                                    <CheckCircle2 size={12} className="text-accent/40 group-hover/item:text-accent" />
+                                                    <span>{cert.name} <span className="text-accent/50">({cert.year || cert.org})</span></span>
+                                                </a>
+                                            ) : (
+                                                <div className="flex items-center gap-2 italic">
+                                                    {/* Icono de "En progreso" */}
+                                                    <CircleDashed size={12} className="text-gray-500 animate-[spin_4s_linear_infinite]" />
+                                                    <span className="text-gray-500">{cert.name} <span className="text-[8px] tracking-widest text-accent/40 uppercase ml-1">En curso</span></span>
+                                                </div>
+                                            )}
+                                        </div>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
+
+                        {/* Google & Otros */}
                         <div>
-                            <h4 className="text-[10px] font-bold uppercase text-gray-500 mb-2 tracking-widest text-left">Otros Logros</h4>
-                            <ul className="text-[10px] text-gray-300 space-y-1 text-left">
-                                <li>• HTML, CSS, JS <span className="text-accent/50">(SoloLearn)</span></li>
-                                <li>• Prompt Engineering <span className="text-accent/50">(Gemini AI)</span></li>
+                            <h4 className="text-[10px] font-bold uppercase text-gray-500 mb-3 tracking-widest text-left">Otros Logros</h4>
+                            <ul className="text-[10px] text-gray-300 space-y-2 text-left">
+                                {/* Renderizamos primero los de Google que son links simples */}
+                                {[
+                                    { name: 'Google Ads Display', org: 'Google', link: 'https://skillshop.credential.net/1095aaf8-8d0e-4a12-9160-95dcc1bebfc7#acc.MEXonmBK' },
+                                    { name: 'Google Ads Search', org: 'Google', link: 'https://skillshop.credential.net/86a7af23-95b9-49fa-b03b-eecdebc6198e#acc.MN6zYpCF' },
+                                ].map((cert) => (
+                                    <li key={cert.name}>
+                                        <a href={cert.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group/item hover:text-accent transition-colors">
+                                            <CheckCircle2 size={12} className="text-accent/40 group-hover/item:text-accent transition-colors" />
+                                            <span>{cert.name} <span className="text-accent/50">({cert.org})</span></span>
+                                        </a>
+                                    </li>
+                                ))}
+
+                                {/* CASO ESPECIAL: Multi-links para SoloLearn */}
+                                <li className="flex items-start gap-2 group/item">
+                                    <CheckCircle2 size={12} className="text-accent/40 group-hover/item:text-accent mt-0.5 transition-colors" />
+                                    <div className="flex flex-wrap items-center gap-1">
+                                        <a href="https://www.sololearn.com/certificates/CT-ZQB4B86J" target="_blank" className="hover:text-accent underline decoration-accent/20">HTML</a>
+                                        <span className="text-gray-600">/</span>
+                                        <a href="https://www.sololearn.com/certificates/CT-VINRJTWB" target="_blank" className="hover:text-accent underline decoration-accent/20">CSS</a>
+                                        <span className="text-gray-600">/</span>
+                                        <a href="https://www.sololearn.com/certificates/CT-ZKDSVLBD" target="_blank" className="hover:text-accent underline decoration-accent/20">JS</a>
+                                        <span className="text-accent/50 ml-1">(SoloLearn)</span>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>

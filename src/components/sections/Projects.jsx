@@ -14,15 +14,15 @@ export const Projects = ({profile, onSelect}) => {
             title: "Web de Negocios",
             category: "hybrid",
             videoUrl: videoOlga,
-            fullDesc: "",
+            fullDesc: "Desarrollo integral de una plataforma de ventas para 'Doña Olga', diseñada bajo una mentalidad de Growth. La solución no solo presenta un menú digital atractivo, sino que optimiza el embudo de ventas mediante una integración directa con WhatsApp Business. Implementé un CMS con Sanity para que el cliente gestione precios y stock en tiempo real sin tocar una línea de código. Se priorizó la velocidad de carga (SEO) y la experiencia de usuario (UX) para maximizar la retención de tráfico orgánico proveniente de redes sociales.",
             results: ["+15% Ventas", "5k visitas"],
             strategy: {
                 tofu: "Atracción mediante contenido viral en TikTok / Instragram.",
                 mofu: "Landing page persuasiva con catálogo en Sanity.",
                 bofu: "Cierre de ventas vía WhatsApp Business."
             },
-            desc: "Solución potenciada con IA para optimizar ventas mejorando la velocidad de captación y conversión de posibles compradores con buena experiencia de interfaz, menu, y redirección a la venta via WhatsApp Business con implementación de Cms con Sanity creando pagina admin para la administracion de productos/precios/categoria",
-            tags: ["SEO", "IA", "Growth", "Pixel","Logica", "React", "Css", "Js", "Bootstrap", "Git", "CMS", "Sanity"],
+            desc: "Landing con CMS Sanity que elimina la fricción en ventas, automatizando pedidos vía WhatsApp.",
+            tags: ["React","CMS", "IA", "SEO", "Growth", "Pixel","Logica", "Css", "Js", "Bootstrap", "Git", "Sanity"],
             Link: "https://donaolga.vercel.app/"
         },
         {
@@ -31,7 +31,7 @@ export const Projects = ({profile, onSelect}) => {
             title: "Estrategia Growth Viral",
             category: "growth",
             videoUrl: "",
-            fullDesc: "",
+            fullDesc: "Ejecución de una estrategia de Inbound Marketing centrada en la viralización de contenidos orgánicos para productos de Hotmart. El proyecto consistió en la creación de un ecosistema de contenido escalable en TikTok y Reels, utilizando técnicas de copywriting persuasivo y edición dinámica en CapCut. El objetivo fue nutrir un embudo donde la audiencia transita desde el descubrimiento (TOFU) hasta la confianza en la solución, centralizando los puntos de contacto en Beacons para facilitar la compra directa.",
             results: "",
             strategy: {
                 tofu: "Capatación de publico con contenido viral en TikTok/Instragram/Facebook",
@@ -48,7 +48,7 @@ export const Projects = ({profile, onSelect}) => {
             title: "Portafolio Web",
             category: "dev",
             videoUrl: "",
-            fullDesc: "",
+            fullDesc: "Este portafolio es el resultado de la fusión entre desarrollo moderno y arquitectura de datos. Utilicé React para una interfaz fluida y Tailwind CSS para un diseño oscuro (Dark Mode) de alta gama. La inteligencia del sitio reside en su integración con Sanity CMS, lo que me permite iterar secciones, proyectos y habilidades de forma dinámica. Apliqué conceptos de Prompt Engineering con Gemini para optimizar el código y asegurar que cada componente sea reutilizable y eficiente.",
             results: "",
             desc: "Web desarrollada para potenciar mi carrera en Desarrollo y Growth Marketer implementando el desarrollo en React con Sanity para mejorar la esctructura y actualización de cada título/sección/información que quiera cambiar en un futuro y actualizarlo a mi gusto. ",
             tags: ["React","Tailwind", "Logic", "CMS", "Sanity", "IA","Git"],
@@ -60,7 +60,7 @@ export const Projects = ({profile, onSelect}) => {
             title: "Calculadora Minimalista",
             category: "dev",
             videoUrl: videoCalc,
-            fullDesc: "",
+            fullDesc: "Un ejercicio de precisión técnica y diseño minimalista. Esta aplicación se centra en la resolución de lógica compleja mediante JavaScript puro (Vanilla JS), gestionando operaciones matemáticas y estados de interfaz de manera eficiente. Implementé un sistema de cambio de tema (Dark/Light Mode) basado en preferencias del sistema y variables CSS, asegurando que el diseño responsivo se adapte perfectamente a cualquier dispositivo mediante Media Queries avanzadas.",
             results: ["100% Responsivo", "Código Limpio", "Logica pura JS"],
             desc: "App desarrollada con html, css y logica pura js integrando modo Claro / Oscuro con estilo minimalista y aplicando media queries para el diseño responsivo de calculadora.",
             tags: ["Logica", "Html", "Css", "Js", "Media Query","Dark", "Light"],
@@ -76,7 +76,7 @@ export const Projects = ({profile, onSelect}) => {
     return (
         <section id="experiencia" className="py-20 px-4 max-w-6xl mx-auto">
       <h2 className="text-4xl font-black mb-12 text-center">
-        <span className="text-blueL drop-shadow-[0_0_15px_rgba(0,255,247,0.6)]">
+        <span className="text-blueL drop-shadow-[0_0_15px_rgba(0,255,247,0.5)] hover:drop-shadow-[0_0_20px_rgba(0,255,247,0.5)] transition-all duration-400">
           Experiencia
         </span>
       </h2>
@@ -118,7 +118,7 @@ export const Projects = ({profile, onSelect}) => {
               </p>
               
               <div className="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                {project.tags.slice(0, 3).map(tag => (
+                {project.tags.slice(0, 4).map(tag => (
                   <span key={tag} className="text-[9px] px-2 py-1 rounded-full bg-accent/5 backdrop-blur-md border border-accent/20 text-accent font-bold">
                     {tag}
                   </span>

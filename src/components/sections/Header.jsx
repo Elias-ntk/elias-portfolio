@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 export const Header = ({ profile, setProfile, onReset }) => {
-    const [activeTab, setActiveTab] = useState('Home');
+    const [activeTab, setActiveTab] = useState('Inicio');
 
     useEffect(() => {
     const sections = ['hero', 'servicios', 'experiencia', 'sobre-mí'];
@@ -18,12 +18,12 @@ export const Header = ({ profile, setProfile, onReset }) => {
                 
                 // 2. Mapeo explícito para evitar errores de capitalización
                 if (id === 'hero') { 
-                    setActiveTab('Home');
+                    setActiveTab('Inico');
                 } else if (id === 'servicios') {
                     setActiveTab('Servicios');
                 } else if (id === 'experiencia') {
                     setActiveTab('Experiencia');
-                } else if (id === 'sobre-mi') {
+                } else if (id === 'sobre-mí') {
                     setActiveTab('Sobre Mi');
                 }
             }
@@ -51,16 +51,16 @@ export const Header = ({ profile, setProfile, onReset }) => {
 
             {/* 2. Navegación (Centro) */}
             <nav className="hidden md:flex gap-8">
-            {['Home', 'Sobre Mí', 'Servicios', 'Experiencia'].map((item) => {
+            {['Inicio', 'Sobre Mí', 'Servicios', 'Experiencia'].map((item) => {
                 const isSelected = activeTab === item;
 
                 return (
                 <a 
                     key={item}
-                    href={item === 'Home' ? '#' : `#${item.toLowerCase().replace(' ', '-')}`}
+                    href={item === 'Inicio' ? '#' : `#${item.toLowerCase().replace(' ', '-')}`}
                     onClick={() => {
                     setActiveTab(item);
-                    if (item === 'Home') {
+                    if (item === 'Inicio') {
                         setProfile('all'); 
                     }
                     }}

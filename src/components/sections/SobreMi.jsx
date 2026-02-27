@@ -2,7 +2,7 @@ import { GraduationCap, Code, Rocket, Video, Palette, BrainCircuit, CheckCircle2
 
 export const SobreMi = () => {
     return (
-        <section id="sobre-mi" className="py-20 px-4 max-w-6xl mx-auto">
+        <section id="sobre-mí" className="py-20 px-4 max-w-6xl mx-auto">
             <div className="flex justify-center mb-4">
                 <span className="px-4 py-1 text-[20px] mx-text-xs font-bold hover:tracking-[0.3em] text-accent drop-shadow-[0_0_9px_rgb(0,255,247,0.6)] transition-all duration-600" >Sobre Mí</span>
             </div>

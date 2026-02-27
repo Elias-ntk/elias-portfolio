@@ -10,7 +10,7 @@
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
   /* Animación para Dev (un ligero balanceo de código) */
-  --animation-soft-shake: soft-shake 8s ease-in-out infinite;
+  --animation-soft-shake: soft-shake 5s ease-in-out infinite;
   /* Animación para Growth (sube y baja suavemente) */
   --animation-float: float 4s ease-in-out infinite;
   /* Animación para Hybrid (pulso de energía) */
@@ -22,11 +22,11 @@
 @keyframes soft-shake {
   /* Se mueve solo del 0% al 30% */
   0% { transform: rotate(0deg); }
-  5% { transform: rotate(-15deg); }
-  7% { transform: rotate(15deg); }
-  8% { transform: rotate(-8deg);}
-  9% { transform: rotate(5deg);}
-  10% { transform: rotate(0deg);}
+  25% { transform: rotate(-15deg); }
+  37% { transform: rotate(15deg); }
+  48% { transform: rotate(-8deg);}
+  59% { transform: rotate(5deg);}
+  70% { transform: rotate(0deg);}
   
   
   100% { transform: rotate(0deg); }
@@ -41,8 +41,8 @@
 
 @keyframes glow-pulse {
   0% { transform: scale(1); filter: drop-shadow(0 0 2px #00fff7); }
-  15% { transform: scale(1.15); filter: drop-shadow(0 0 15px #00fff7); }
-  30% { transform: scale(1); filter: drop-shadow(0 0 2px #00fff7); }
+  75% { transform: scale(1.15); filter: drop-shadow(0 0 15px #00fff7); }
+  85% { transform: scale(1); filter: drop-shadow(0 0 2px #00fff7); }
   100% { transform: scale(1); filter: drop-shadow(0 0 2px #00fff7); }
 }
 
